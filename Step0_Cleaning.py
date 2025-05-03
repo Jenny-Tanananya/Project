@@ -41,6 +41,7 @@ categorical_features = [
 for feature in categorical_features:
     possible_values = df[feature].unique()
     print(f"Possible values for {feature}: {possible_values}")
+df = cap_outiers_for_column(df, categorical_features)
 df_categorical = df[categorical_features]
 df_categorical
 msno.matrix(df_categorical, color=(0.5, 0.75, 1))
@@ -85,6 +86,7 @@ numerical_features = [
     'CRP Level',
     'Homocysteine Level'
 ]
+df = cap_outiers_for_column(df, numerical_features)
 df_numerical = df[numerical_features]
 df_numerical
 msno.matrix(df_numerical, color=(0.75, 0.75, 1))
