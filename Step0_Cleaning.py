@@ -1,14 +1,11 @@
-from google.colab import drive
-drive.mount('/content/drive')
 import pandas as pd
 import numpy as np
-from google.colab import drive
 import matplotlib.pyplot as plt
 import seaborn as sns
 import missingno as msno
 import sklearn.model_selection
 from sklearn.impute import SimpleImputer
-df = pd.read_csv('/content/drive/MyDrive/Project_CE/heart_disease.csv')
+df = pd.read_csv('heart_disease.csv')
 df = pd.DataFrame(df)
 df
 df.isna().sum(axis='index')
@@ -128,4 +125,4 @@ HDS.plot(kind='pie', autopct='%1.1f%%', startangle=90, colors=['#CCCCFF','#fff0b
 plt.title('Heart Disease Status')
 plt.ylabel('')
 plt.show()
-df.to_csv('/content/drive/MyDrive/Project_CE/heart_disease_clean.csv', index=False)
+df.to_csv('heart_disease_clean.csv', index=False)
